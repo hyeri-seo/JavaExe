@@ -8,6 +8,8 @@ public class DataType {
 		String name = "홍길동"; 	//문자열
 		boolean isRun = true; 	//참, 거짓
 		String str = "a"; 		//문자열인데 문자가 하나일 뿐
+		String name1 = "Albert";
+		
 		// 자료형 변수공간이름 = 값
 		System.out.println(num);
 		num = 999;				//num에 999를 저장
@@ -17,6 +19,7 @@ public class DataType {
 		System.out.println(name);
 		System.out.println(isRun);
 		System.out.println(str);
+		System.out.println(name1);
 	}
 
 }
