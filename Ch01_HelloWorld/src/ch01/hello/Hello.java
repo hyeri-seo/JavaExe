@@ -5,5 +5,6 @@ public class Hello {
 	// ctrl + f11 하면 실행이 됨
 	public static void main(String[] args) {
 		System.out.println("HelloWorld");
+		System.out.println("Hello, Java");
 	}
 }
