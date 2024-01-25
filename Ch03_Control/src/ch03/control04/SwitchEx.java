@@ -18,12 +18,16 @@ public class SwitchEx {
 		switch(sel) {
 		case 1:
 			System.out.println("짜장면이 나왔습니다.");
+			break;
 		case 2:
 			System.out.println("짬뽕이 나왔습니다.");
+			break;
 		case 3:
 			System.out.println("탕수육이 나왔습니다.");
+			break;
 		case 4:
 			System.out.println("유산슬이 나왔습니다.");
+			break;
 		case 5:
 			System.out.println("유린기가 나왔습니다.");
 			break;
