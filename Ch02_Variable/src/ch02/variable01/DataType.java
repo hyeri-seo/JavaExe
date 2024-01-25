@@ -6,7 +6,7 @@ public class DataType {
 		double dnum = 3.14; 	//실수
 		char ch = 'a'; 			//문자 하나
 		String name = "홍길동"; 	//문자열
-		boolean isRun = true; 	//참, 거짓
+		boolean isRun = true; 	//true, false
 		String str = "a"; 		//문자열인데 문자가 하나일 뿐
 		String name1 = "Albert";
 		
