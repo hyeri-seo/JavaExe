@@ -9,5 +9,6 @@ public class Resolve13 {
 		Scanner sc = new Scanner(System.in);
 		int input = sc.nextInt();
 		for(int i=1; i<=input; i++) System.out.print(i*3 + " ");
+		sc.close();
 	}
 }

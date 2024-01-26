@@ -8,5 +8,6 @@ public class Resolve12 {
 		Scanner sc = new Scanner(System.in);
 		int input = sc.nextInt();
 		for(int i=1; i<=input; i++) System.out.println("감사합니다.");
+		sc.close();
 	}
 }
