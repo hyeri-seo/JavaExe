@@ -11,20 +11,25 @@ public class Resolve2 {
 //	   36인 경우는 "박수짝짝"을 출력하면 됩니다.
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("1부터 99까지의 정수 중 하나를 입력하세요. >> ");
-		int input = sc.nextInt();
-		int count = 0;
 		
-		int m = input/10;
-		int n = input%10;
-
-		if(m==3 || m==6 || m==9) count++;
-		if(n==3 || n==6 || n==9) count++;
-		
-		if(count == 2) {
-			System.out.println("박수짝짝");
-		} else if(count == 1) {
-			System.out.println("박수짝");
+		while(true) {
+			System.out.print("1부터 99까지의 정수 중 하나를 입력하세요. >> ");
+			int input = sc.nextInt();
+			if(input <0) break;
+			int count = 0;
+			
+			int m = input/10;
+			int n = input%10;
+			
+			if(m==3 || m==6 || m==9) count++;
+			if(n==3 || n==6 || n==9) count++;
+			
+			if(count == 2) {
+				System.out.println("박수짝짝");
+			} else if(count == 1) {
+				System.out.println("박수짝");
+			}
+			
 		}
 		sc.close();
 	}
