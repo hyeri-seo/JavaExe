@@ -10,6 +10,11 @@ public class AdvancedForExample {
 //		for(int i=0; i<scores.length; i++) {
 //			sum += scores[i];
 //		}
+		/*
+		 * 5개의 항목이 한 번씩 score 변수에 저장되고
+		 * sum에 누적됨
+		 * (반복 횟수: 5)
+		 */
 		for(int score: scores) {
 			sum += score;
 		}
