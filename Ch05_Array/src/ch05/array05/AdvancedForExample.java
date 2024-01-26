@@ -7,8 +7,11 @@ public class AdvancedForExample {
 		int[] scores = {95, 71,  84, 93, 87};
 		//배열 항목 전체 합 구하기
 		int sum = 0;
-		for(int i=0; i<scores.length; i++) {
-			sum += scores[i];
+//		for(int i=0; i<scores.length; i++) {
+//			sum += scores[i];
+//		}
+		for(int score: scores) {
+			sum += score;
 		}
 		System.out.println("총점: " + sum);
 		//배열 항목 전체 평균 구하기
