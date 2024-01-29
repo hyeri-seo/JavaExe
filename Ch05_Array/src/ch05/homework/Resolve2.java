@@ -8,8 +8,6 @@ public class Resolve2 {
 		int max = arr[arr.length -1];
 		for(int i=0; i<arr.length-1; i++) {
 			if(arr[i] < min) min = arr[i];
-		}
-		for(int i=0; i<arr.length-1; i++) {
 			if(arr[i] > max) max = arr[i];
 		}
 		System.out.println("최소값: " + min);
