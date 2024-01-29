@@ -5,5 +5,8 @@ public class Resolve1 {
 	public static void main(String[] args) {
 		String[] names = {"가영", "나영", "다영", "라영", "마영", "바영", "사영", "아영", "자영", "차영"};
 		for(int i=0; i<names.length; i++) System.out.print(names[i] + " ");
+		System.out.println();
+		//향상된 for문
+		for(String name : names) System.out.print(name + " ");
 	}
 }
