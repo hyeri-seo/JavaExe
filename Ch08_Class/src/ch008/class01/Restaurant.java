@@ -29,7 +29,7 @@ public class Restaurant {
 		}
 	}
 	public void selectFood() {
-		System.out.println("어떤 음식을 선택하시겠습니까? >> ");
+		System.out.print("어떤 음식을 선택하시겠습니까? >> ");
 		selectNum = sc.nextInt();
 	}
 	public void deliveryFood() {
