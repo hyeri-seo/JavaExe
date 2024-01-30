@@ -12,6 +12,7 @@ public class Resolve1 {
 		} else {
 			return y;
 		}
+//		return (x>y)?x:y;
 	}
 	
 	public static int smallNum(int x, int y) {
@@ -20,6 +21,7 @@ public class Resolve1 {
 		} else {
 			return x;
 		}
+//		return (x>y)?y:x;
 	}
 	
 	public static void main(String[] args) {
