@@ -1,11 +1,16 @@
 package ch09.Resolve07;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import ch09.Resolve07.Resolve1.Add;
 import ch09.Resolve07.Resolve1.Div;
 import ch09.Resolve07.Resolve1.Mul;
 import ch09.Resolve07.Resolve1.Sub;
+import ch09.Resolve07.Resolve2.Triangle;
+import ch09.Resolve07.Resolve3.ArrayUtility;
+import ch09.Resolve07.Resolve4.ArrayUtility2;
+import ch09.Resolve07.Resolve5.Child;
 
 
 /*
@@ -112,41 +117,104 @@ public static void answer1(Scanner sc) {
 	System.out.print("두 번째 수를 입력해주세요. >> ");
 	int b = sc.nextInt();
 	Add add = new Add();
-	add.a = a;
-	add.b = b;
-	System.out.println("더하기 결과 = " + add.calculate());
+	add.setValue(a, b);
+	System.out.println("더하기 결과 = " + add.calculate(add));
 	Sub sub = new Sub();
-	sub.a = a;
-	sub.b = b;
-	System.out.println("빼기 결과 = " + sub.calculate());
+	sub.setValue(a, b);
+	System.out.println("빼기 결과 = " + sub.calculate(sub));
 	Mul mul = new Mul();
-	mul.a = a;
-	mul.b = b;
-	System.out.println("곱하기 결과 = " + mul.calculate());
+	mul.setValue(a, b);
+	System.out.println("곱하기 결과 = " + mul.calculate(mul));
 	Div div = new Div();
-	div.a = a;
-	div.b = b;
-	System.out.println("나누기 결과 = " + div.calculate());
+	div.setValue(a, b);
+	System.out.println("나누기 결과 = " + div.calculate(div));
 }
 
 // 2번 문제에 대한 풀이
 public static void answer2(Scanner sc) {
-	
+	System.out.print("삼각형의 밑변의 길이를 입력해주세요. >> ");
+	int width = sc.nextInt();
+	System.out.print("삼각형의 높이를 입력해주세요. >> ");
+	int height = sc.nextInt();
+	Triangle triangle = new Triangle(width, height);
+	System.out.println("삼각형의 첫 넓이=" + triangle.calArea(triangle));
+	System.out.print("변경하실 삼각형의 밑변의 길이를 입력해주세요. >> ");
+	width = sc.nextInt();
+	System.out.print("변경하실 삼각형의 높이를 입력해주세요. >> ");
+	height = sc.nextInt();
+	triangle.setTriangle(width, height);
+	System.out.println("삼각형의 변경된 넓이=" + triangle.calArea(triangle));
 }
 
 // 3번 문제에 대한 풀이
 public static void answer3(Scanner sc) {
+	int[] intArr = new int[5];
+	double[] doubArr = new double[5];
 	
+	System.out.print("정수 5개를 입력해주세요. >> ");
+	for(int i=0; i<intArr.length; i++) {
+		intArr[i] = sc.nextInt();
+	}
+	ArrayUtility au1 = new ArrayUtility(sc, intArr);
+	System.out.println("입력하신 정수 배열을 실수 배열로 변환하면 " 
+					+ Arrays.toString(au1.intToDouble(au1.intArr)) + "입니다.");
+	
+	System.out.print("실수 5개를 입력해주세요. >> ");
+	for(int i=0; i<doubArr.length; i++) {
+		doubArr[i] = sc.nextDouble();
+	}
+	ArrayUtility au2 = new ArrayUtility(sc, doubArr);
+	System.out.println("입력하신 정수 배열을 실수 배열로 변환하면 " 
+					+ Arrays.toString(au2.doubleToInt(doubArr)) + "입니다.");
 }
 
 // 4번 문제에 대한 풀이
 public static void answer4(Scanner sc) {
-	
+	int[] intArr1 = new int[5];
+	int[] intArr2 = new int[5];
+	System.out.print("첫 번째 배열에 넣을 정수 5개를 입력해주세요. >> ");
+	for(int i=0; i<intArr1.length; i++) {
+		intArr1[i] = sc.nextInt();
+	}
+	System.out.print("두 번째 배열에 넣을 정수 5개를 입력해주세요. >> ");
+	for(int i=0; i<intArr2.length; i++) {
+		intArr2[i] = sc.nextInt();
+	}
+	ArrayUtility2 au = new ArrayUtility2(sc, intArr1, intArr2);
+	System.out.println("두 배열을 이어 만든 새로운 배열은 " 
+			+ Arrays.toString(au.concat(au.intArr1, au.intArr2)) + "입니다.");
+	System.out.println("첫 번째 배열에서 두 번째 배열의 값을 제외하고 만든 새로운 배열은 " 
+			+ Arrays.toString(au.remove(au.intArr1, au.intArr2)) + "입니다.");
 }
 
 // 5번 문제에 대한 풀이
 public static void answer5(Scanner sc) {
+	System.out.print("첫 번째 사람의 이름을 입력해주세요. >> ");
+	String name1 = sc.next();
+	System.out.print("보유하고 있는 구슬의 개수를 입력해주세요. >> ");
+	int marbleCount1 = sc.nextInt();
+	System.out.print("두 번째 사람의 이름을 입력해주세요. >> ");
+	String name2 = sc.next();
+	System.out.print("보유하고 있는 구슬의 개수를 입력해주세요. >> ");
+	int marbleCount2 = sc.nextInt();
+	Child child1 = new Child(name1, marbleCount1);
+	Child child2 = new Child(name2, marbleCount2);
 	
+	child1.viewMarbles(child1);
+	child2.viewMarbles(child2);
+	
+	System.out.print(child1.name + "이/가 " + child2.name 
+			+ "에게서 가져올 구슬의 수를 입력해주세요. >> ");
+	int marbles1 = sc.nextInt();
+	System.out.print(child2.name + "이/가 " + child1.name 
+			+ "에게서 가져올 구슬의 수를 입력해주세요. >> ");
+	int marbles2 = sc.nextInt();
+	
+	Child.playMarbles1(child1, child2, marbles1);
+	Child.playMarbles2(child1, child2, marbles2);
+	
+	child1.viewMarbles(child1);
+	child2.viewMarbles(child2);
 }
 
 // 전체의 시작인 main 메서드
