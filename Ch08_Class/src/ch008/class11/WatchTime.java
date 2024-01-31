@@ -40,6 +40,7 @@ public class WatchTime {
 		
 		WatchTime wtStr = new WatchTime("열두시", "이십분", "오십초");
 		System.out.println("wtStr:" + wtStr);
+		System.out.println("wtStr:%s\n" + wtStr.hashCode());
 		wtStr.viewTime();
 	}
 }
