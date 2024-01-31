@@ -9,7 +9,7 @@ public class Div{
 		this.b = b;
 	}
 
-	public int calculate() {
-		return a / b;
+	public int calculate(Div div) {
+		return div.a / div.b;
 	}
 }

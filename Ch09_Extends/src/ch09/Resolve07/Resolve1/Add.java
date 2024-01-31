@@ -9,8 +9,8 @@ public class Add{
 		this.b = b;
 	}
 
-	public int calculate() {
-		return a + b;
+	public int calculate(Add add) {
+		return add.a + add.b;
 	}
 
 }

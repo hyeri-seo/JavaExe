@@ -9,7 +9,7 @@ public class Mul{
 		this.b = b;
 	}
 
-	public int calculate() {
-		return a * b;
+	public int calculate(Mul mul) {
+		return mul.a * mul.b;
 	}
 }
