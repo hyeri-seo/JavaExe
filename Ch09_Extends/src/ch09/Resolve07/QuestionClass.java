@@ -49,6 +49,11 @@ import ch09.Resolve07.Resolve5.Child;
      2차 놀이에서 어린이2는 어린이 1의 구슬 7개를 획득한다
      마지막으로 각각의 어린이가 보유하고 있는 구슬의 수를 출력한다
      프로그램을 종료한다.
+     
+   클래스 설계에서 접근 권한 설정
+   1) 필드 -> private
+   	  메서드 -> public
+   2) 메서드 중에 내부에서만 사용하는 메서드 -> private
 */
 
 public class QuestionClass {
