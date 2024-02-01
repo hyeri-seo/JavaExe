@@ -3,8 +3,8 @@ package ch09.abstract10;
 //임시직
 public class TempEmployee extends Employee {
 	
-	private int yearSalary;		//연봉
-	private int hireYear;		//계약기간
+	protected int yearSalary;		//연봉
+	protected int hireYear;		//계약기간
 
 	public TempEmployee(String empno, String name, 
 						int yearSalary, int hireYear) {

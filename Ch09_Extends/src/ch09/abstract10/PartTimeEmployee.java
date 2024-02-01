@@ -3,8 +3,8 @@ package ch09.abstract10;
 //일용직
 public class PartTimeEmployee extends Employee {
 	
-	private int dailyPay;		//일당
-	private int workDay;		//일한 일수
+	protected int dailyPay;		//일당
+	protected int workDay;		//일한 일수
 
 	public PartTimeEmployee(String empno, String name, int dailyPay, int workDay) {
 		super(empno, name);

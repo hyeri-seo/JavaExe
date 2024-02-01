@@ -3,8 +3,8 @@ package ch09.abstract10;
 //정규직
 public class RegularEmployee extends Employee{
 	
-	private int yearSalary;	//연봉
-	private int bonus;		//보너스
+	protected int yearSalary;	//연봉
+	protected int bonus;		//보너스
 
 	public RegularEmployee(String empno, String name,
 							int yearSalary, int bonus) {
