@@ -1,4 +1,4 @@
-package ch09.abstract10;
+package ch09.abstract11;
 
 //정규직
 public class RegularEmployee extends Employee{

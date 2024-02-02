@@ -1,4 +1,4 @@
-package ch09.abstract10;
+package ch09.abstract11;
 
 //일용직
 public class PartTimeEmployee extends Employee {

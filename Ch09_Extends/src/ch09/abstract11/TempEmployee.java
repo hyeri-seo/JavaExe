@@ -1,4 +1,4 @@
-package ch09.abstract10;
+package ch09.abstract11;
 
 //임시직
 public class TempEmployee extends Employee {
