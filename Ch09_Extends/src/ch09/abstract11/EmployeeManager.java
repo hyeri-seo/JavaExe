@@ -6,7 +6,13 @@ public class EmployeeManager {
 	private final int EMP_NUM = 100;	//관리할 수 있는 최대 사원의 수
 	// Employee의 자식 객체들을 저장
 	private Employee[] empArr = new Employee[EMP_NUM];
+	private Employee[] regEmpArr = new RegularEmployee[EMP_NUM];
+	private Employee[] tempEmpArr = new TempEmployee[EMP_NUM];
+	private Employee[] ptEmpArr = new PartTimeEmployee[EMP_NUM];
 	private int numOfEmp = 0;			//저장된 사원 객체 수, 다음 사원이 저장될 index
+	private int numOfRegEmp = 0;
+	private int numOfTempEmp = 0;
+	private int numOfPtEmp = 0;
 	private Scanner sc = new Scanner(System.in);
 	
 	private int viewMenu() {
@@ -85,10 +91,64 @@ public class EmployeeManager {
 		return isSave;
 	}
 	
+	private void saveRegEmployee(Employee emp) {		
+		if(this.numOfEmp < EMP_NUM && emp instanceof RegularEmployee) {
+			this.regEmpArr[this.numOfRegEmp] = (RegularEmployee)emp;
+			this.numOfRegEmp ++;
+		}
+	}
+	
+	private void saveTempEmployee(Employee emp) {		
+		if(this.numOfEmp < EMP_NUM && emp instanceof TempEmployee) {
+			this.tempEmpArr[this.numOfTempEmp] = (TempEmployee)emp;
+			this.numOfTempEmp ++;
+		}
+	}
+	
+	private void savePtEmployee(Employee emp) {		
+		if(this.numOfEmp < EMP_NUM && emp instanceof PartTimeEmployee) {
+			this.ptEmpArr[this.numOfPtEmp] = (PartTimeEmployee)emp;
+			this.numOfPtEmp ++;
+		}
+	}
+	
 	private void viewAllEmployeeInfo() {
 		for(int i=0; i<this.numOfEmp; i++) {
 			this.empArr[i].showEmployeeInfo();
 		}
+	}
+	
+	private void viewAllRegEmployeeInfo() {
+		for(int i=0; i<this.numOfRegEmp; i++) {
+			this.regEmpArr[i].showEmployeeInfo();
+		}
+//		for(int i=0;i<this.numOfEmp;i++) {
+//			Employee emp = this.empArr[i];
+//			if(emp instanceof RegularEmployee)
+//				this.empArr[i].showEmployeeInfo();
+//		}
+	}
+	
+	private void viewAllTempEmployeeInfo() {
+		for(int i=0; i<this.numOfTempEmp; i++) {
+			this.tempEmpArr[i].showEmployeeInfo();
+		}
+//		for(int i=0;i<this.numOfEmp;i++) {
+//			Employee emp = this.empArr[i];
+//			if(emp instanceof TempEmployee)
+//				this.empArr[i].showEmployeeInfo();
+//		}
+	}
+	
+	private void viewAllPtEmployeeInfo() {
+		for(int i=0; i<this.numOfPtEmp; i++) {
+			this.ptEmpArr[i].showEmployeeInfo();
+		}
+//		for(int i=0;i<this.numOfEmp;i++) {
+//			Employee emp = this.empArr[i];
+//			if(emp instanceof PartTimeEmployee)
+//				this.empArr[i].showEmployeeInfo();
+//		}
 	}
 	
 	public void run() {
@@ -110,6 +170,18 @@ public class EmployeeManager {
 				emp = null;
 				viewAllEmployeeInfo();;
 				break;
+			case EmpMenu.ALL_REG_INFO :
+				emp = null;
+				viewAllRegEmployeeInfo();;
+				break;
+			case EmpMenu.ALL_TEMP_INFO :
+				emp = null;
+				viewAllTempEmployeeInfo();;
+				break;
+			case EmpMenu.ALL_PT_INFO :
+				emp = null;
+				viewAllPtEmployeeInfo();;
+				break;
 			case EmpMenu.EXIT :
 				emp = null;
 				isRun = false;
@@ -122,6 +194,9 @@ public class EmployeeManager {
 			
 			if(emp != null) {
 				boolean isSave = saveEmployee(emp);
+				saveRegEmployee(emp);
+				saveTempEmployee(emp);
+				savePtEmployee(emp);
 				if(!isSave) 
 					System.out.println("더 이상 저장공간이 없습니다.");
 			}
