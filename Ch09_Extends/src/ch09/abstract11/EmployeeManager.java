@@ -14,8 +14,11 @@ public class EmployeeManager {
 		System.out.println("1. 정규직");
 		System.out.println("2. 임시직");
 		System.out.println("3. 일용직");
-		System.out.println("4. 전체정보보기");
-		System.out.println("5. 종료");
+		System.out.println("4. 전체 정보 보기");
+		System.out.println("5. 정규직 정보 보기");
+		System.out.println("6. 임시직 정보 보기");
+		System.out.println("7. 일용직 정보 보기");
+		System.out.println("8. 종료");
 		System.out.print("번호 입력 >> ");
 		int sel = sc.nextInt();
 		return sel;
