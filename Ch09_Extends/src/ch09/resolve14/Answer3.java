@@ -47,7 +47,7 @@ public class Answer3 implements IQuestionAnswer {
 				+ "==> 3스트라이크 0볼\r\n"
 				+ "==> 삼진아웃!!\r\n"
 				+ "\r\n"
-				+ "다시하시겠습니까(Y/N)?";
+				+ "다시하시겠습니까(Y/N)?\r\n\r\n";
 		System.out.println(question);
 	}
 
@@ -56,6 +56,11 @@ public class Answer3 implements IQuestionAnswer {
 		sc.nextLine();		//Enter치기 전까지 멈춰 있음
 		System.out.println("3번 문제 실행");
 		sc.nextLine();		//Enter치기 전까지 멈춰 있음
+	}
+
+	@Override
+	public boolean isRun() {
+		return true;
 	}
 
 }

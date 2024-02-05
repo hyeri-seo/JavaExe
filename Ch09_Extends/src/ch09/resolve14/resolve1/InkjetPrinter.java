@@ -1,11 +1,11 @@
 package ch09.resolve14.resolve1;
 
 public class InkjetPrinter extends Printer {
-	private int inkRemaining;	//잉크 잔량
+	private double inkRemaining;	//잉크 잔량
 	
 	public InkjetPrinter() {}
 	public InkjetPrinter(String model, String manufacturer, 
-			String interfaceType, int paperRemaining, int inkRemaining) {
+			P_INTERFACE interfaceType, int paperRemaining, double inkRemaining) {
 		super(model, manufacturer, interfaceType, paperRemaining);
 		this.inkRemaining = inkRemaining;
 	}
@@ -16,7 +16,7 @@ public class InkjetPrinter extends Printer {
 			System.out.println("인쇄가 진행됩니다.");
 			printCount++;
 			paperRemaining--;
-			inkRemaining--;
+			inkRemaining -= 0.1;
 		} else if(paperRemaining > 0 && inkRemaining == 0){
 			System.out.println("잉크가 부족합니다.");
 		} else if(paperRemaining == 0 && inkRemaining > 0){
@@ -25,4 +25,12 @@ public class InkjetPrinter extends Printer {
 			System.out.println("용지와 잉크가 부족합니다.");
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return "InkjetPrinter [inkRemaining=" + inkRemaining + ", model=" + model + ", manufacturer=" + manufacturer
+				+ ", interfaceType=" + interfaceType + ", printCount=" + printCount + ", paperRemaining="
+				+ paperRemaining + "]";
+	}
+	
 }

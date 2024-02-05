@@ -7,7 +7,8 @@ public class QuestionMain {
 	IQuestionAnswer[] qaArr = {
 			new Answer1(),
 			new Answer2(),
-			new Answer3()
+			new Answer3(),
+			new Exit()
 	};
 	
 	public int getSelectQuestion(Scanner sc) {
@@ -36,6 +37,7 @@ public class QuestionMain {
 				// 0이상 ~ 2이하의 인덱스로 변환
 				IQuestionAnswer iqa = qm.qaArr[sel-1];
 				iqa.answer(sc);
+				isRun = iqa.isRun();
 			} else {
 				System.out.println("문제 번호를 잘못 선택했습니다.");
 			}

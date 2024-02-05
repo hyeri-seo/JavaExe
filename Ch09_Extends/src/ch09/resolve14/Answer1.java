@@ -2,6 +2,10 @@ package ch09.resolve14;
 
 import java.util.Scanner;
 
+import ch09.resolve14.resolve1.InkjetPrinter;
+import ch09.resolve14.resolve1.LaserPrinter;
+import ch09.resolve14.resolve1.P_INTERFACE;
+
 public class Answer1 implements IQuestionAnswer {
 
 	@Override
@@ -16,15 +20,36 @@ public class Answer1 implements IQuestionAnswer {
 				+ "편의상 print()메서드를 한 번 호출할 때마다 인쇄용지 1매를 사용하는 것으로 한다\r\n"
 				+ "클래스들을 설계하고\r\n"
 				+ "적절한 필드, 생성자, 메서드를 작성하세요\r\n"
-				+ "그리고 실행 프로그램을 작성해서 동작시키세요";
+				+ "그리고 실행 프로그램을 작성해서 동작시키세요\r\n\r\n";
 		System.out.println(question);
 	}
 
 	@Override
 	public void answer(Scanner sc) {
 		sc.nextLine();		//Enter치기 전까지 멈춰 있음
-		System.out.println("1번 문제 실행");
+		
+		InkjetPrinter ijp = 
+				new InkjetPrinter("HP-264", "HP", 
+						P_INTERFACE.USB, 20, 50);
+		ijp.print();
+		ijp.print();
+		ijp.print();
+		System.out.println("ijp");
+		
+		LaserPrinter lp = 
+				new LaserPrinter("Samsung-1111", "Samsung", 
+						P_INTERFACE.PARALLEL_PORT, 20, 100);
+		lp.print();
+		lp.print();
+		lp.print();
+		System.out.println("lp");
+		
 		sc.nextLine();		//Enter치기 전까지 멈춰 있음
+	}
+
+	@Override
+	public boolean isRun() {
+		return true;
 	}
 
 }
