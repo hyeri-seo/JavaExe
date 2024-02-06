@@ -6,6 +6,20 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+/*
+ * Map은 Dictonary, Hashtable 구조라고도 한다.
+ * 검색에 최적화되어 있는 구조
+ * Set은 값 자체를 hash값으로 바꿔서 정렬 후 값을 보관함
+ * 그러나 Map은 key값을 hash값으로 바꿔서 정렬 후 값을 보관함
+ * 그리고 key hash는 테이블로 만들어 실제 value가 위치한 위치값을 저장함
+ * 그래서 key를 넣으면 value를 빠르게 검색할 수 있음
+ * 아무리 많은 데이터라도 빠르게 검색할 수 있는 자료구조임
+ * 데이터베이스의 index가 이 자료구조로 되어 있음
+ * 
+ * 입력 시는 hash값, 정렬이 일어나므로 리스트 구조보다 느림
+ * 다만, 특정 값 검색은 가장 빠름
+ */
+
 public class HashMapExample {
 
 	public static void main(String[] args) {

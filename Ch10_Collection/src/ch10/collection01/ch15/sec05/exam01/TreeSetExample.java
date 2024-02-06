@@ -3,6 +3,21 @@ package ch10.collection01.ch15.sec05.exam01;
 import java.util.NavigableSet;
 import java.util.TreeSet;
 
+/*
+ * Tree구조는 이진트리로 검색에 최적화되어 있는 구조
+ * 현재 노드보다 왼쪽에 있는 노드는 반드시 값이 작음
+ * 반대로 현재 노드보다 오른쪽에 있는 노드는 반드시 값이 큼
+ * 내가 원하는 값을 찾을 때가지 계속 노드의 값을 비교하면 왼쪽 or 오른쪽을 따라감
+ * 
+ * 데이터 입력 시 정렬과정을 거치게 되므로 list보다 입력 속도가 느림
+ * 특정 검색 시 Hash보다는 느리지만 list보다는 훨씬 빠름
+ * 노드의 좌측/우측 명백하게 작으냐 크냐로 구분되므로 
+ * 정렬이 일어나므로 순서 보장 안 됨
+ * 
+ * 값 자체를 비교하면 TreeSet
+ * Key 값으로 비교하면 TreeMap
+ */
+
 public class TreeSetExample {
 
 	public static void main(String[] args) {
