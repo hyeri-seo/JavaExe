@@ -10,7 +10,7 @@ public class GenericExample {
 		box2.content = "100";
 
 		Box box3 = new Box();
-		box3.content = "100";
+		box3.content = 100;
 		
 		boolean result1 = box1.compare(box2);
 		System.out.println("result1:" + result1);
