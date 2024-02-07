@@ -1,5 +1,6 @@
 package ch10.collection02.linkedList03;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -114,7 +115,10 @@ public class EmployeeManager {
 		System.out.print("정보를 수정할 사원의 사원 번호 입력 >> ");
 		String empno = sc.next();
 		Employee newEmp = null;
-		for(Employee emp : empList) {
+		Iterator<Employee> iterator = empList.iterator();
+		
+		while(iterator.hasNext()) {
+			Employee emp = iterator.next();
 			if(emp.empno.equals(empno)) {
 				emp.showEmployeeInfo();
 				System.out.println("--------------------");
@@ -129,37 +133,40 @@ public class EmployeeManager {
 					System.out.print("변경할 보너스 입력 >> ");
 					int newBonus = sc.nextInt();
 					newEmp = new RegularEmployee(newEmpno, newName, newYearSalary, newBonus);
-					return newEmp;
 				} else if(emp instanceof TempEmployee) {
 					System.out.print("변경할 연봉 입력 >> ");
 					int newYearSalary = sc.nextInt();
 					System.out.print("변경할 게약 기간 입력 >> ");
 					int newHireYear = sc.nextInt();
 					newEmp = new TempEmployee(newEmpno, newName, newYearSalary, newHireYear);
-					return newEmp;
 				} else {
 					System.out.print("변경할 연봉 입력 >> ");
 					int newDailyPay = sc.nextInt();
 					System.out.print("변경할 게약 기간 입력 >> ");
 					int newWorkDay = sc.nextInt();
 					newEmp = new PartTimeEmployee(newEmpno, newName, newDailyPay, newWorkDay);
-					return newEmp;
 				}
+				iterator.remove();
+				empList.add(newEmp);
+				break;
 			}
-			empList.remove(emp);
 		}
 		return newEmp;
 	}
 	private void removeEmployeeInfoByEmpno() {
 		System.out.print("정보를 삭제할 사원 번호 입력 >> ");
-		String empno = sc.next();
-		for(Employee emp : empList) {
-			if(emp.empno.equals(empno)) {
-				System.out.println("아래는 삭제될 사원의 정보입니다.");
-				emp.showEmployeeInfo();
-				empList.remove(emp);
-			}
-		}
+	    String empno = sc.next();
+	    Iterator<Employee> iterator = empList.iterator(); // Iterator를 사용하여 리스트를 순회
+
+	    while (iterator.hasNext()) {
+	        Employee emp = iterator.next();
+	        if (emp.empno.equals(empno)) {
+	            System.out.println("아래는 삭제될 사원의 정보입니다.");
+	            emp.showEmployeeInfo();
+	            iterator.remove(); // 현재 요소를 삭제
+	            break; // 삭제가 완료되었으므로 반복 종료
+	        }
+	    }
 	}
 	public void run() {
 		boolean isRun = true;
