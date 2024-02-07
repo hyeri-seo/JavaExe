@@ -12,10 +12,10 @@ public class GenericExample {
 		Box box3 = new Box();
 		box3.content = "100";
 		
-		boolean result1 = box1.compae(box2);
+		boolean result1 = box1.compare(box2);
 		System.out.println("result1:" + result1);
 		
-		boolean result2 = box1.compae(box3);
+		boolean result2 = box1.compare(box3);
 		System.out.println("result2:" + result2);
 	}
 
