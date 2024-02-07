@@ -1,0 +1,17 @@
+package ch12.object01.ch12.sec03.exam03;
+
+public class SmartPhone {
+	private String company;
+	private String os;
+	
+	public SmartPhone(String company, String s) {
+		super();
+		this.company = company;
+		this.os = os;
+	}
+
+	@Override
+	public String toString() {
+		return company + ", " + os;
+	}	
+}
