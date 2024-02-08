@@ -13,6 +13,10 @@ public class GenericExample {
 		//Getter 리턴값은 Tv와 String이 됨
 		Tv tv = product1.getKind();
 		String tvModel = product1.getModel();
+		
+		System.out.println(product1);	//ch13.sec02.exam01.Product@1d81eb93
+		System.out.println(tv);			//ch13.sec02.exam01.Tv@7291c18f
+		System.out.println(tvModel);	//스마트Tv
 		//-------------------------------------------------
 		//K는 Car로 대체, M은 String으로 대체
 		Product<Car, String> product2 = new Product<>();
@@ -24,6 +28,10 @@ public class GenericExample {
 		//Getter 리턴값은 Car와 String이 됨
 		Car car = product2.getKind();
 		String carModel = product2.getModel();
+		
+		System.out.println(product2);	//ch13.sec02.exam01.Product@7cc355be
+		System.out.println(car);		//ch13.sec02.exam01.Car@6e8cf4c6
+		System.out.println(carModel);	//SUV 자동차
 	}
 
 }
