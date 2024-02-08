@@ -118,7 +118,7 @@ public class EmployeeManager {
 		Iterator<Employee> iterator = empList.iterator();
 		
 		while(iterator.hasNext()) {
-			Employee emp = iterator.next();
+			Employee emp = iterator.next();					
 			if(emp.empno.equals(empno)) {
 				emp.showEmployeeInfo();
 				System.out.println("--------------------");

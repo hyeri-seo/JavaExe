@@ -1,7 +1,9 @@
 package ch13.sec02.exam03;
 
 public class GenericExample {
-
+	/*
+	 * Box<T>에서 T를 지정하지 않으면 T는 Object로 자동 결정됨
+	 */
 	public static void main(String[] args) {
 		Box box1 = new Box();
 		box1.content = "100";

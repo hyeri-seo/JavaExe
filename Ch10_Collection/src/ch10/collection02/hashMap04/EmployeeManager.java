@@ -134,12 +134,11 @@ public class EmployeeManager {
 		System.out.print("정보를 수정할 사원의 사원 번호 입력 >> ");
 		String empno = sc.next();
 		Employee newEmp = null;
-
 		Iterator<String> iterator = empMap.keySet().iterator();
+
 		while (iterator.hasNext()) {
 			String currentEmpno = iterator.next();
 			Employee emp = empMap.get(currentEmpno);
-			emp.showEmployeeInfo();
 
 			if (emp.empno.equals(empno)) {
 				emp.showEmployeeInfo();
@@ -168,23 +167,27 @@ public class EmployeeManager {
 					int newWorkDay = sc.nextInt();
 					newEmp = new PartTimeEmployee(newEmpno, newName, newDailyPay, newWorkDay);
 				}
+				iterator.remove();
+				empMap.put(newEmp.empno, newEmp);				
 				break;
 			}
 		}
-		empMap.put(newEmp.empno, newEmp);
-		empMap.remove(empno);
 		return newEmp;
 	}
 
 	private void removeEmployeeInfoByEmpno() {
 		System.out.print("정보를 삭제할 사원 번호 입력 >> ");
 		String empno = sc.next();
-		while (keyIterator.hasNext()) {
-			empno = keyIterator.next();
-			Employee emp = empMap.get(empno);
+		Iterator<String> iterator = empMap.keySet().iterator();
+		
+		while (iterator.hasNext()) {
+			String currentEmpno = iterator.next();
+			Employee emp = empMap.get(currentEmpno);
+			
 			System.out.println("아래는 삭제될 사원의 정보입니다.");
 			emp.showEmployeeInfo();
-			empMap.remove(empno);
+			iterator.remove();
+			break;
 		}
 	}
 

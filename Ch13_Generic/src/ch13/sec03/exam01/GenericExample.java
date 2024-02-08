@@ -3,6 +3,7 @@ package ch13.sec03.exam01;
 public class GenericExample {
 
 	// 제네릭 메소드
+	//		  타입파라미터 리턴값자료형		매개변수
 	public static <T> Box<T> boxing(T t) {
 		Box<T> box = new Box<T>();
 		box.set(t);
