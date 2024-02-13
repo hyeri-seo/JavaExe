@@ -1,4 +1,4 @@
-package ch15.thread02;
+package ch15.thread02.implements02;
 
 class OwnName {
 	private String ownName;

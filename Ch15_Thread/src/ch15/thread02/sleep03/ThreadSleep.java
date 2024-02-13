@@ -1,4 +1,4 @@
-package ch15.thread02;
+package ch15.thread02.sleep03;
 
 public class ThreadSleep {
 	public static void main(String[] args) {

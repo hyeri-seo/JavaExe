@@ -1,4 +1,4 @@
-package ch15.thread02;
+package ch15.thread02.join04;
 
 public class ThreadJoin {
 	public static void main(String[] args) {

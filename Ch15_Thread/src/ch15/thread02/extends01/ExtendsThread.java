@@ -1,4 +1,4 @@
-package ch15.thread02;
+package ch15.thread02.extends01;
 
 /*
  * [스레드 생성 요청하는 2가지 방법]
