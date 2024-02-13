@@ -9,6 +9,17 @@ public class WorkThread extends Thread {
 		setName(name);
 	}
 	
+	/*
+	 * 스레드의 제어 권한을 다른 스레드에 넘기는 방법
+	 * 1) sleep(10);
+	 * 	  10ms 동안 현재 스레드는 스케줄링에서 제외하겠다
+	 * 	  즉, 다른 스레드에 실행을 넘기겠다.
+	 * 	  난 멈추겠다.
+	 * 2) Thread.yield();
+	 * 	  의미없는 일을 하느니 그냥 넘기겠다.
+	 * 	  즉, 다른 스레드에 실행을 넘기겠다.
+	 */
+	
 	//메소드
 	@Override
 	public void run() {
