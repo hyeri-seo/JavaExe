@@ -9,6 +9,7 @@ public class PrintThread extends Thread {
 				Thread.sleep(1);
 			}
 		} catch(InterruptedException e) {
+			System.out.println(e);
 		}
 		System.out.println("리소스 정리");
 		System.out.println("실행 종료");

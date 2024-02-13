@@ -28,6 +28,7 @@ public class CallableSubmitExample {
 			});
 			
 			try {
+				//스레드풀 내의 임의의 스레드가 call()을 처리하고 난 결과를 아래처럼 받음
 				int result = future.get();
 				System.out.println("\t리턴값: " + result);
 			} catch(Exception e) {
