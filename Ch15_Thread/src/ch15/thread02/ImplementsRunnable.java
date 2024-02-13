@@ -40,7 +40,7 @@ class ShowOwnNameThread extends OwnName implements Runnable {
 	
 }
 
-public class implementsRunnable {
+public class ImplementsRunnable {
 	public static void main(String[] args) {
 		//스레드 2개가 vm에 할당되어 준비하고 있는 상태
 		ShowOwnNameThread s1 = new ShowOwnNameThread("철수");
