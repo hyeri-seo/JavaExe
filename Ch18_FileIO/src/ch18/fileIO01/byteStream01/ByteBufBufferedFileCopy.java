@@ -24,7 +24,7 @@ import java.io.OutputStream;
  * App프로세스 (아파트)
  * 택배 차량 (버퍼 클래스)
  */
-public class ByteBufferedFileCopy {
+public class ByteBufBufferedFileCopy {
 	public static void main(String[] args) throws IOException {
 		// 입력 스트림
 		InputStream in = new FileInputStream("video.mp4");
@@ -32,28 +32,29 @@ public class ByteBufferedFileCopy {
 		BufferedInputStream bin = new BufferedInputStream(in);	
 		
 		// 출력 스트림
-		OutputStream out = new FileOutputStream("힐링 비디오.mp4");
+		OutputStream out = new FileOutputStream("힐링 비디오2.mp4");
 		// 출력 스트림과 연결된 저장소(버퍼) 필터 클래스
 		BufferedOutputStream bout = new BufferedOutputStream(out);
 		
 		/*
-		 * 1byte씩 입출력을 하지만 대신 버퍼필터클래스를 사용함
+		 * 1024byte씩 입출력과 버퍼필터클래스를 사용함
 		 */
-		int copyByte = 0;
-		int bData;
+		long copyByte = 0;
+		int readLen = 0;
+		byte[] buf = new byte[1024];
 		long stime = System.currentTimeMillis();
 		while(true) {
-			bData = bin.read();
-			if(bData == -1)
+			readLen = bin.read(buf);
+			if(readLen == -1)
 				break;
-			bout.write(bData);
+			bout.write(buf, 0, readLen);
 			copyByte++;
 		}
 		long etime = System.currentTimeMillis();
 		
 		bin.close();
 		bout.close();
-		System.out.println("복사 시간 = " + (etime - stime));	//복사 시간 = 9783
-		System.out.println("복사된 바이트 크기 =  " + copyByte);	//복사된 바이트 크기 =  229858153
+		System.out.println("복사 시간 = " + (etime - stime));	//복사 시간 = 406. 시간이 많이 단축됨
+		System.out.println("복사된 바이트 크기 =  " + copyByte);	//복사된 바이트 크기 =  224471
 	}
 }
